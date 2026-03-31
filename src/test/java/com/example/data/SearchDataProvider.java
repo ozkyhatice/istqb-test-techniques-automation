@@ -18,4 +18,12 @@ public class SearchDataProvider {
             { "aya", "Valid_Above_Boundary" }
         };
     }
+    @DataProvider(name = "priceFilterData")
+    public Object[][] priceFilterData() {
+        return new Object[][] {
+            { "100", "5000", "Valid Range" },
+            { "800", "800", "Valid_Same_Boundary" },
+            { "-10", "100", "Invalid_Negative" }
+        };
+    }
 }
