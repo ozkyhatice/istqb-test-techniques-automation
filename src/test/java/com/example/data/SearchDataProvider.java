@@ -26,4 +26,17 @@ public class SearchDataProvider {
             { "-10", "100", "Invalid_Negative" }
         };
     }
+    @DataProvider(name = "decisionTableData")
+    public Object[][] decisionTableData() {
+        return new Object[][] {
+            {"", "0", "", "", "R1_NoKeyword_NoCat_NoPrice"},
+            {"", "0", "100", "500", "R2_NoKeyword_NoCat_HasPrice"},
+            {"", "1", "", "", "R3_NoKeyword_HasCat_NoPrice"},
+            {"", "1", "100", "500", "R4_NoKeyword_HasCat_HasPrice"},
+            {"çanta", "0", "", "", "R5_HasKeyword_NoCat_NoPrice"},
+            {"çanta", "0", "100", "500", "R6_HasKeyword_NoCat_HasPrice"},
+            {"çanta", "1", "", "", "R7_HasKeyword_HasCat_NoPrice"},
+            {"çanta", "1", "100", "500", "R8_HasKeyword_HasCat_HasPrice"}
+        };
+    }
 }
