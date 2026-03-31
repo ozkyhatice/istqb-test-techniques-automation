@@ -26,4 +26,33 @@ public class SearchTest extends BaseTest {
         
         softAssert.assertAll();
     }
+    @Test(dataProvider = "bvaSearchData", dataProviderClass = SearchDataProvider.class)
+    public void testSearchBarBoundaryValues(String searchTerm, String boundaryType) {
+        SoftAssert softAssert = new SoftAssert();
+        HomePage homePage = new HomePage();
+
+        homePage.openPage();
+        homePage.searchForProduct(searchTerm);
+
+        String actualMessage = homePage.verifyNoResultsMessage();
+
+        switch (boundaryType) {
+            case "Invalid_Below_Boundary":
+                softAssert.assertTrue(actualMessage.contains("en az 2 karakter olmalıdır"),
+                        "error " + actualMessage);
+                break;
+
+            case "Valid_Boundary":
+                softAssert.assertFalse(actualMessage.contains("en az 2 karakter olmalıdır"),
+                        "error: " + actualMessage);
+                break;
+
+            case "Valid_Above_Boundary":
+                softAssert.assertFalse(actualMessage.contains("en az 2 karakter olmalıdır"),
+                        "error " + actualMessage);
+                break;
+        }
+
+        softAssert.assertAll();
+    }
 }

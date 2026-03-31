@@ -10,4 +10,12 @@ public class SearchDataProvider {
             { "", "Empty" },
         };
     }
+    @DataProvider(name = "bvaSearchData")
+    public Object[][] bvaSearchData() {
+        return new Object[][] {
+            { "a", "Invalid_Below_Boundary" },
+            { "ay", "Valid_Boundary" },
+            { "aya", "Valid_Above_Boundary" }
+        };
+    }
 }
