@@ -1,5 +1,4 @@
 package com.example.pages;
-
 import com.example.base.BasePage;
 import com.example.config.ConfigReader;
 

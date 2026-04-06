@@ -7,7 +7,7 @@ import com.example.pages.ProductPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
-
+import com.example.pages.CartPage;
 public class ShoppingCartSteps {
 
     private HomePage homePage;
@@ -44,8 +44,8 @@ public class ShoppingCartSteps {
 
     @Then("The user should proceed to the checkout step")
     public void the_user_should_proceed_to_the_checkout_step() {
-        // CartPage cartPage = new CartPage();
-        // cartPage.clickCheckout();
+        CartPage cartPage = new CartPage();
+        cartPage.clickCheckout();
         System.out.println("Proceeded to the checkout step.");
         DriverFactory.quitDriver();
     }
