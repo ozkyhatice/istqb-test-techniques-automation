@@ -4,7 +4,7 @@ import org.testng.asserts.SoftAssert;
 import com.example.data.SearchDataProvider;
 import com.example.pages.SearchFilterPage;
 public class SearchFilterTest extends BaseTest {
-    @Test(dataProvider = "priceFilterData", dataProviderClass = SearchDataProvider.class)
+    @Test(priority = 1, dataProvider = "priceFilterData", dataProviderClass = SearchDataProvider.class)
     public void testPriceFilterBoundaries(String min, String max, String scenarioType) {
         SoftAssert softAssert = new SoftAssert();
         SearchFilterPage advancedSearchPage = new SearchFilterPage();
@@ -34,7 +34,7 @@ public class SearchFilterTest extends BaseTest {
 
         softAssert.assertAll();
     }
-    @Test(dataProvider = "decisionTableData", dataProviderClass = SearchDataProvider.class)
+    @Test(priority = 2, dataProvider = "decisionTableData", dataProviderClass = SearchDataProvider.class)
     public void testSearchFilterDecisionTable(String keyword, String category, String minPrice, String maxPrice, String ruleName) {
         SoftAssert softAssert = new SoftAssert();
         SearchFilterPage searchFilterPage = new SearchFilterPage();
